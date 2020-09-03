@@ -46,9 +46,9 @@ function setup() {
 	mango04 = new Mango(640, 300);
 	mango05 = new Mango(560, 300);
 	mango06 = new Mango(680, 380);
-    mango07 = new Mango(600, 380);
+  mango07 = new Mango(600, 380);
 	mango08 = new Mango(520, 380);
-    mango09 = new Mango(760, 380);
+  mango09 = new Mango(760, 380);
 	mango10 = new Mango(720, 460);
 	mango11 = new Mango(640, 460);
 	mango12 = new Mango(560, 460);
@@ -129,7 +129,8 @@ function detectCollision(bodyStone, bodyMango){
 	var mangoBodyPos = bodyStone.body.position;
 	var stoneBodyPos = bodyMango.body.position;
 
-	if((stoneBodyPos.x < mangoBodyPos.x + 60) && ((stoneBodyPos.y < mangoBodyPos.y + 60) && (stoneBodyPos.y > mangoBodyPos.y - 60))){
+  if(((stoneBodyPos.x < mangoBodyPos.x + 45) && (stoneBodyPos.x > mangoBodyPos.x - 45)) && 
+  ((stoneBodyPos.y < mangoBodyPos.y + 45) && (stoneBodyPos.y > mangoBodyPos.y - 45))){
 		console.log("ukit");
 		Matter.Body.setStatic(bodyMango.body, false);
 	  }
